@@ -1,0 +1,95 @@
+{
+  "title": "Product Feedback Survey Example",
+  "showProgressBar": "top",
+  "pages": [
+    {
+      "questions": [
+        {
+          "type": "matrix",
+          "name": "Quality",
+          "title": "<span>Please indicate if you <b>agree</b> or <b>disagree</b> with the following statements</span>",
+          "columns": [
+            {
+              "value": 1,
+              "text": "<span><b>Strongly Disagree</b></span>"
+            },
+            {
+              "value": 2,
+              "text": "<span><b>Disagree</b></span>"
+            },
+            {
+              "value": 3,
+              "text": "<span><b>Neutral</b></span>"
+            },
+            {
+              "value": 4,
+              "text": "<span><b>Agree</b></span>"
+            },
+            {
+              "value": 5,
+              "text": "<span><b>Strongly Agree</b></span>"
+            }
+          ],
+          "rows": [
+            {
+              "value": "affordable",
+              "text": "Product is affordable"
+            },
+            {
+              "value": "does what it claims",
+              "text": "Product does what it claims"
+            },
+            {
+              "value": "better then others",
+              "text": "Product is better than other products on the market"
+            },
+            {
+              "value": "easy to use",
+              "text": "Product is easy to use"
+            }
+          ]
+        },
+        {
+          "type": "rating",
+          "name": "satisfaction",
+          "title": "How satisfied are you with the Product?",
+          "mininumRateDescription": "Not Satisfied",
+          "maximumRateDescription": "Completely satisfied"
+        },
+        {
+          "type": "rating",
+          "name": "recommend friends",
+          "visibleIf": "{satisfaction} > 3",
+          "title": "How likely are you to recommend the Product to a friend or co-worker?",
+          "mininumRateDescription": "Will not recommend",
+          "maximumRateDescription": "I will recommend"
+        },
+        {
+          "type": "comment",
+          "name": "suggestions",
+          "title": "What would make you more satisfied with the Product?"
+        },
+        {
+          "type": "checkbox",
+          "name": "words",
+          "title": "Which of the words would you use to describe our products?",
+          "isRequired": true,
+          "colCount": 2,
+          "choices": [
+            "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input'>Reliable</label></div>",
+            "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input'>High quality</label></div>",
+            "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input'>Useful</label></div>",
+            "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input'>Unique</label></div>",
+            "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input'>Good</label></div>",
+            "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input'>Overpriced</label></div>",
+            "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input'>Impractical</label></div>",
+            "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input'>Ineffective</label></div>",
+            "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input'>Poor quality</label></div>",
+            "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input'>Unreliable</label></div>",
+            "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input'>Not for me</label></div>"
+          ]
+        }
+      ]
+    }
+  ]
+}

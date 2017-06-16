@@ -15,10 +15,11 @@ import { AppState } from './app.service';
 @Component({
   selector: 'app',
   encapsulation: ViewEncapsulation.None,
+  templateUrl: './app.html',
   styleUrls: [
-    './app.component.css'
+    './app.component.scss'
   ],
-  template: `
+  /*template: `
     <nav>
       <a [routerLink]=" ['./'] "
         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
@@ -56,7 +57,7 @@ import { AppState } from './app.service';
         </a>
       </div>
     </footer>
-  `
+  `*/
 })
 export class AppComponent implements OnInit {
   public angularclassLogo = 'assets/img/angularclass-avatar.png';
