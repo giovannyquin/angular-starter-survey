@@ -4,11 +4,11 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class DexCoreService {
-  constructor(private _dexApiService: DexApiService){
+  constructor(private _dexApiService: DexApiService) {
 
   }
 
-  getQuestionsSurvey<T> (url): Observable<T> {
+  public getQuestionsSurvey<T>(url): Observable<T> {
     return this._dexApiService.getResource(url);
   }
 }

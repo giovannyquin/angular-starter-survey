@@ -25,11 +25,9 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { DexHeaderComponent, DexBodyComponent, DexHomeComponent } from './core/index';
-import { HomeComponent } from './home';
-import { AboutComponent } from './about';
-import { NoContentComponent } from './no-content';
-import { XLargeDirective } from './home/x-large';
+// import { HomeComponent } from './home';
+// import { NoContentComponent } from './no-content';
+// import { XLargeDirective } from './home/x-large';
 
 // own modules
 import { DexSharedModule } from './shared/index';
@@ -54,16 +52,15 @@ type StoreType = {
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
 @NgModule({
-  bootstrap: [ AppComponent ],
+  bootstrap: [AppComponent],
   declarations: [
     AppComponent,
-    //DexHeaderComponent,
-    //DexBodyComponent,
-    //DexHomeComponent,
-    AboutComponent,
-    HomeComponent,
-    NoContentComponent,
-    XLargeDirective
+    // DexHeaderComponent,
+    // DexBodyComponent,
+    // DexHomeComponent,
+    // HomeComponent,
+    // NoContentComponent,
+    // XLargeDirective
   ],
   /**
    * Import Angular's modules.
@@ -72,7 +69,7 @@ type StoreType = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
+    RouterModule.forRoot(ROUTES, {useHash: true, preloadingStrategy: PreloadAllModules}),
     NgbModule.forRoot(),
     DexSharedModule,
     DexCoreModule
@@ -87,10 +84,9 @@ type StoreType = {
 })
 export class AppModule {
 
-  constructor(
-    public appRef: ApplicationRef,
-    public appState: AppState
-  ) {}
+  constructor(public appRef: ApplicationRef,
+              public appState: AppState) {
+  }
 
   public hmrOnInit(store: StoreType) {
     if (!store || !store.state) {
@@ -128,7 +124,7 @@ export class AppModule {
     /**
      * Save input values
      */
-    store.restoreInputValues  = createInputTransfer();
+    store.restoreInputValues = createInputTransfer();
     /**
      * Remove styles
      */

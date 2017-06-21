@@ -76,17 +76,61 @@
           "isRequired": true,
           "colCount": 2,
           "choices": [
-            "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input'>Reliable</label></div>",
-            "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input'>High quality</label></div>",
-            "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input'>Useful</label></div>",
-            "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input'>Unique</label></div>",
-            "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input'>Good</label></div>",
-            "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input'>Overpriced</label></div>",
-            "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input'>Impractical</label></div>",
-            "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input'>Ineffective</label></div>",
-            "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input'>Poor quality</label></div>",
-            "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input'>Unreliable</label></div>",
-            "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input'>Not for me</label></div>"
+            {
+              "value": "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input' (change)='onClick($event, choices.id, choices.name)'>Reliable</label></div>",
+              "id": 0,
+              "name": "chk-0"
+            },
+            {
+              "value": "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input' (change)='onClick($event, choices.id, choices.name)'>High quality</label></div>",
+              "id": 1,
+              "name": "chk-1"
+            },
+            {
+              "value": "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input' (change)='onClick($event, choices.id, choices.name)'>Useful</label></div>",
+              "id": 2,
+              "name": "chk-2"
+            },
+            {
+              "value": "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input' (change)='onClick($event, choices.id, choices.name)'>Unique</label></div>",
+              "id": 3,
+              "name": "chk-3"
+            },
+            {
+              "value": "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input' (change)='onClick($event, choices.id, choices.name)'>Good</label></div>",
+              "id": 4,
+              "name": "chk-4"
+            },
+            {
+              "value": "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input' (change)='onClick($event, choices.id, choices.name)'>Overpriced</label></div>",
+              "id": 5,
+              "name": "chk-5"
+            },
+            {
+              "value": "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input' (change)='onClick($event, choices.id, choices.name)'>Impractical</label></div>",
+              "id": 6,
+              "name": "chk-6"
+            },
+            {
+              "value": "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input' (change)='onClick($event, choices.id, choices.name)'>Ineffective</label></div>",
+              "id": 7,
+              "name": "chk-7"
+            },
+            {
+              "value": "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input' (change)='onClick($event, choices.id, choices.name)'>Poor quality</label></div>",
+              "id": 8,
+              "name": "chk-8"
+            },
+            {
+              "value": "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input' (change)='onClick($event, choices.id, choices.name)'>Unreliable</label></div>",
+              "id": 9,
+              "name": "chk-9"
+            },
+            {
+              "value": "<div class='form-check'><label class='form-check-label'><input type='checkbox' class='form-check-input' (change)='onClick($event, choices.id, choices.name)'>Not for me</label></div>",
+              "id": 10,
+              "name": "chk-10"
+            }
           ]
         }
       ]

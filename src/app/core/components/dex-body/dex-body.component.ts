@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppState } from '../../../app.service';
 
 @Component({
@@ -6,8 +6,12 @@ import { AppState } from '../../../app.service';
   templateUrl: './dex-body.html',
   styles: [require('./dex-body.scss')]
 })
-export class DexBodyComponent {
-  constructor(public appState: AppState){
+export class DexBodyComponent implements OnInit {
+  constructor(public appState: AppState) {
 
+  }
+
+  public ngOnInit() {
+    console.log('hello `Dex Body` component');
   }
 }

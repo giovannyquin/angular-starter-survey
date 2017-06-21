@@ -16,20 +16,19 @@ import { MockBackend } from '@angular/http/testing';
 /**
  * Load the implementations that should be tested.
  */
-import { AppState } from '../app.service';
-import { HomeComponent } from './home.component';
-import { Title } from './title';
+import { AppState } from '../../../app.service';
+import { DexBodyComponent } from './dex-body.component';
 
-describe(`Home`, () => {
-  let comp: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+describe(`DexBody`, () => {
+  let comp: DexBodyComponent;
+  let fixture: ComponentFixture<DexBodyComponent>;
 
   /**
    * async beforeEach.
    */
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [HomeComponent],
+      declarations: [DexBodyComponent],
       schemas: [NO_ERRORS_SCHEMA],
       providers: [
         BaseRequestOptions,
@@ -41,21 +40,20 @@ describe(`Home`, () => {
           },
           deps: [MockBackend, BaseRequestOptions]
         },
-        AppState,
-        Title,
+        AppState
       ]
     })
     /**
      * Compile template and css.
      */
-    .compileComponents();
+      .compileComponents();
   }));
 
   /**
    * Synchronous beforeEach.
    */
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent);
+    fixture = TestBed.createComponent(DexBodyComponent);
     comp = fixture.componentInstance;
 
     /**
@@ -65,14 +63,6 @@ describe(`Home`, () => {
   });
 
   it('should have default data', () => {
-    expect(comp.localState).toEqual({ value: '' });
-  });
-
-  it('should have a title', () => {
-    expect(!!comp.title).toEqual(true);
-  });
-
-  it('should log ngOnInit', () => {
     spyOn(console, 'log');
     expect(console.log).not.toHaveBeenCalled();
 

@@ -266,6 +266,7 @@ module.exports = function (options) {
       global: true,
       process: false,
       crypto: 'empty',
+      fs: 'empty',
       module: false,
       clearImmediate: false,
       setImmediate: false

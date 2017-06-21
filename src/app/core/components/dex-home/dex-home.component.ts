@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {DomSanitizer} from '@angular/platform-browser';
-import {DexCoreService} from '../../shared/services/dex-core.service';
-import {SafeHtml} from '@angular/platform-browser';
+import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { DexCoreService } from '../../shared/services/dex-core.service';
+import { SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'dex-home',
@@ -9,18 +9,19 @@ import {SafeHtml} from '@angular/platform-browser';
   styleUrls: ['./dex-home.scss']
 })
 export class DexHomeComponent implements OnInit {
-  questionList: any;
+  public questionList: any;
+  public modelToSend: any[] = [];
 
   constructor(private _dexCoreService: DexCoreService,
               private _sanitizer: DomSanitizer) {
 
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.getQuestionsSurvey();
   }
 
-  getQuestionsSurvey(): void {
+  public getQuestionsSurvey(): void {
     const url = '../../../assets/mock-data/survey.json';
     this._dexCoreService.getQuestionsSurvey(url)
       .subscribe(
@@ -28,11 +29,21 @@ export class DexHomeComponent implements OnInit {
           this.questionList = questionList;
           console.log('response component ', this.questionList);
         },
-        error => <any> error
+        (error: any) => {
+          return <any> error;
+        }
       );
   }
 
-  transformSafeHtml(html: string): SafeHtml {
+  public onClick(event: any, id?: number, name?: string): void {
+    this.modelToSend.push({
+      id,
+      name
+    });
+    console.log('click ', id, name, event, this.modelToSend);
+  }
+
+  public transformSafeHtml(html: string): SafeHtml {
     return this._sanitizer.bypassSecurityTrustHtml(html);
   }
 
