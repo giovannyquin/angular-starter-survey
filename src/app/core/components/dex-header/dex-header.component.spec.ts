@@ -19,18 +19,18 @@ import { MockBackend } from '@angular/http/testing';
  * Load the implementations that should be tested.
  */
 import { AppState } from '../../../app.service';
-import { DexBodyComponent } from './dex-body.component';
+import { DexHeaderComponent } from './dex-header.component';
 
-describe(`DexBody`, () => {
-  let comp: DexBodyComponent;
-  let fixture: ComponentFixture<DexBodyComponent>;
+describe(`DexHeader`, () => {
+  let comp: DexHeaderComponent;
+  let fixture: ComponentFixture<DexHeaderComponent>;
 
   /**
    * async beforeEach.
    */
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [DexBodyComponent],
+      declarations: [DexHeaderComponent],
       schemas: [NO_ERRORS_SCHEMA],
       providers: [
         BaseRequestOptions,
@@ -55,7 +55,7 @@ describe(`DexBody`, () => {
    * Synchronous beforeEach.
    */
   beforeEach(() => {
-    fixture = TestBed.createComponent(DexBodyComponent);
+    fixture = TestBed.createComponent(DexHeaderComponent);
     comp = fixture.componentInstance;
 
     /**
@@ -68,10 +68,10 @@ describe(`DexBody`, () => {
     let de: DebugElement;
     let el: HTMLElement;
     // query for the title <h1> by CSS element selector
-    de = fixture.debugElement.query(By.css('main'));
+    de = fixture.debugElement.query(By.css('.navbar-brand'));
     el = de.nativeElement;
     fixture.detectChanges();
-    expect(el.textContent.trim()).toBeFalsy();
+    expect(el.textContent).toContain('Deloitte-Dex');
   });
 
   it('should have default data', () => {

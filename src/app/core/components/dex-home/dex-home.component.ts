@@ -27,7 +27,6 @@ export class DexHomeComponent implements OnInit {
       .subscribe(
         (questionList: any) => {
           this.questionList = questionList;
-          console.log('response component ', this.questionList);
         },
         (error: any) => {
           return <any> error;
@@ -41,6 +40,10 @@ export class DexHomeComponent implements OnInit {
       name
     });
     console.log('click ', id, name, event, this.modelToSend);
+  }
+
+  public continueSurvey(): void {
+    console.log('continue Surve ', this.modelToSend);
   }
 
   public transformSafeHtml(html: string): SafeHtml {

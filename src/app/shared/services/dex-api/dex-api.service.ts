@@ -16,7 +16,6 @@ export class DexApiService {
   public getResource<T>(url: string): Observable<T> {
     return this._http.get(url)
       .map((response: Response) => {
-        console.log('no error ', response.json());
         return <T> response.json();
       })
       .do(((data) => { console.log(JSON.stringify(data)); }))
