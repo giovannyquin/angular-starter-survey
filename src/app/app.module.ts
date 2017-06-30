@@ -25,9 +25,6 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-// import { HomeComponent } from './home';
-// import { NoContentComponent } from './no-content';
-// import { XLargeDirective } from './home/x-large';
 
 // own modules
 import { DexSharedModule } from './shared/index';
@@ -54,13 +51,7 @@ type StoreType = {
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [
-    AppComponent,
-    // DexHeaderComponent,
-    // DexBodyComponent,
-    // DexHomeComponent,
-    // HomeComponent,
-    // NoContentComponent,
-    // XLargeDirective
+    AppComponent
   ],
   /**
    * Import Angular's modules.

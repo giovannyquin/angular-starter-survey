@@ -66,8 +66,9 @@
           <div class="form-check col-6" *ngFor="let choices of questions.choices">
             <ng-template dynamic-template
                          [template]="choices.value"
-                         [context]="{onClick: onClick, choices: choices, modelToSend: modelToSend}"
-            ></ng-template>
+                         [context]="{onClick: onClick, choices: choices, modelToSend: modelToSend}">
+
+            </ng-template>
           </div>
         </div>
 

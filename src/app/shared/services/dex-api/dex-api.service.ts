@@ -18,7 +18,7 @@ export class DexApiService {
       .map((response: Response) => {
         return <T> response.json();
       })
-      .do(((data) => { console.log(JSON.stringify(data)); }))
+      .do(((data) => { console.log('do getResource'); }))
       .catch(this.handleError);
   }
 
