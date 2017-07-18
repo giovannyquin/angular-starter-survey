@@ -22,7 +22,7 @@ export class DexHomeComponent implements OnInit {
   }
 
   public getQuestionsSurvey(): void {
-    const url = '../../../assets/mock-data/survey.json';
+    const url = 'survey.json';
     this._dexCoreService.getQuestionsSurvey(url)
       .subscribe(
         (questionList: any) => {
