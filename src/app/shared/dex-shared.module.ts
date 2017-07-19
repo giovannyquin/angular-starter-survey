@@ -1,15 +1,17 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {DexApiService} from './services/dex-api/dex-api.service';
-import {CoreDiShared, CoreShared} from './constants/core-shared.constants';
+import {CoreDiSharedConstants, CoreSharedConstants} from './constants/core-shared.constants';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [CommonModule],
+  exports: [TranslateModule],
   providers: [
     DexApiService,
     {
-      provide: CoreShared,
-      useValue: CoreDiShared
+      provide: CoreSharedConstants,
+      useValue: CoreDiSharedConstants
     }
   ]
 })

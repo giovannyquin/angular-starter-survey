@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 // import { DynamicComponentModule } from 'angular2-dynamic-component/index';
 import { NgxDynamicTemplateModule } from 'ngx-dynamic-template';
+import { DexSharedModule } from '../shared/dex-shared.module';
 
 import { DexCoreService } from './shared/services/dex-core.service';
 
@@ -35,7 +36,8 @@ import { XLargeDirective } from './components/home/x-large';
     NgxDynamicTemplateModule.forRoot({routes: [
       { path: '',      component: DexHomeComponent },
       { path: 'home',  component: DexHomeComponent }
-    ]})
+    ]}),
+    DexSharedModule
   ],
   providers: [DexCoreService],
   exports: [ DexHeaderComponent, DexBodyComponent ]

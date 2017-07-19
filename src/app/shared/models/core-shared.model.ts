@@ -1,3 +1,3 @@
-export interface ICoreShared {
+export interface ICoreSharedConstants {
   dexApiUrl: string;
 }

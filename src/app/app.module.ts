@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, Http } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import {
   NgModule,
   ApplicationRef
@@ -21,6 +22,7 @@ import {
  */
 import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
+import { HttpLoaderFactory } from './httpLoaderFactory';
 // App is our top level component
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
@@ -62,6 +64,13 @@ type StoreType = {
     HttpModule,
     RouterModule.forRoot(ROUTES, {useHash: true, preloadingStrategy: PreloadAllModules}),
     NgbModule.forRoot(),
+    TranslateModule.forRoot({
+      loader : {
+        provide: TranslateLoader,
+        useFactory: (HttpLoaderFactory),
+        deps: [Http]
+      }
+    }),
     DexSharedModule,
     DexCoreModule
   ],

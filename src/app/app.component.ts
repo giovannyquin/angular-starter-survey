@@ -6,6 +6,7 @@ import {
   OnInit,
   ViewEncapsulation
 } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { AppState } from './app.service';
 
 /**
@@ -26,11 +27,19 @@ export class AppComponent implements OnInit {
   public url = 'https://twitter.com/AngularClass';
 
   constructor(
-    public appState: AppState
-  ) {}
+    public appState: AppState,
+    translate: TranslateService
+  ) {
+    // this language will be used as a fallback when a translation isn't found in the current language
+    translate.setDefaultLang('en-us');
+
+    // the lang to use, if the lang isn't available, it will use the current loader to get them
+    translate.use('en-us');
+  }
 
   public ngOnInit() {
     console.log('Initial App State', this.appState.state);
+
   }
 
 }

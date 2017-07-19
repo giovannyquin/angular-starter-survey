@@ -1,8 +1,8 @@
 import {Injectable, Inject} from '@angular/core';
 import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
-import {CoreShared} from '../../constants/core-shared.constants';
-import {ICoreShared} from '../../models/core-shared.model';
+import {CoreSharedConstants} from '../../constants/core-shared.constants';
+import {ICoreSharedConstants} from '../../models/core-shared.model';
 
 // Rxjs operators
 import 'rxjs/add/operator/map';
@@ -12,7 +12,7 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class DexApiService {
-  constructor(@Inject(CoreShared) private config: ICoreShared,
+  constructor(@Inject(CoreSharedConstants) private config: ICoreSharedConstants,
               private _http: Http) {
   }
 

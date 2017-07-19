@@ -2,7 +2,7 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">Deloitte-Dex</a>
+  <a class="navbar-brand" href="#" [translate]="'HEADER.TITLE'"></a>
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
@@ -15,28 +15,28 @@
 
       <li>
         <a class="nav-link" [routerLink]=" ['./home'] "
-         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Home
+         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}" [translate]="'HEADER.HOME'">
+
       </a>
       </li>
 
       <li>
         <a class="nav-link" [routerLink]=" ['./detail'] "
-         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}" [translate]="'HEADER.DETAIL'">
         Detail
       </a>
       </li>
 
       <li>
         <a class="nav-link" [routerLink]=" ['./barrel'] "
-         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}" [translate]="'HEADER.BARREL'">
         Barrel
       </a>
       </li>
 
       <li>
         <a class="nav-link" [routerLink]=" ['./about'] "
-         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}" [translate]="'HEADER.ABOUT'">
         About
       </a>
       </li>
