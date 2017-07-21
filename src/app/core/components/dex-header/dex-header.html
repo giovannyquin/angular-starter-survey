@@ -1,5 +1,7 @@
 <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+          data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
+          aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <a class="navbar-brand" href="#" [translate]="'HEADER.TITLE'"></a>
@@ -8,41 +10,43 @@
     <ul class="navbar-nav mr-auto">
       <li>
         <a class="nav-link" [routerLink]=" ['./'] "
-         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Index
-      </a>
+           routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          Index
+        </a>
       </li>
 
       <li>
         <a class="nav-link" [routerLink]=" ['./home'] "
-         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}" [translate]="'HEADER.HOME'">
+           routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [translate]="'HEADER.HOME'">
 
-      </a>
+        </a>
       </li>
 
       <li>
         <a class="nav-link" [routerLink]=" ['./detail'] "
-         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}" [translate]="'HEADER.DETAIL'">
-        Detail
-      </a>
+           routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [translate]="'HEADER.DETAIL'">
+          Detail
+        </a>
       </li>
 
       <li>
         <a class="nav-link" [routerLink]=" ['./barrel'] "
-         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}" [translate]="'HEADER.BARREL'">
-        Barrel
-      </a>
+           routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [translate]="'HEADER.BARREL'">
+          Barrel
+        </a>
       </li>
 
       <li>
         <a class="nav-link" [routerLink]=" ['./about'] "
-         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}" [translate]="'HEADER.ABOUT'">
-        About
-      </a>
+           routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [translate]="'HEADER.ABOUT'">
+          About
+        </a>
       </li>
 
     </ul>
     <form class="form-inline my-2 my-lg-0">
+      <a class="nav-link" (click)="changeLanguage('es-co')">Es-co</a>
+      <a class="nav-link" (click)="changeLanguage('en-us')">En-us</a>
       <input class="form-control mr-sm-2" type="text" placeholder="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>

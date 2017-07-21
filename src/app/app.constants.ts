@@ -4,6 +4,6 @@ export type AppConstantsType = {
 };
 
 export const AppDiConstants: AppConstantsType = {
-  translateApi: 'https://gist.githubusercontent.com/giovannyquin/a9c479d8b341c8d1269f5b57e5106de9/raw/',
+  translateApi: 'https://gist.githubusercontent.com/giovannyquin/3a26d949e88583fd9a9802d5770a771a/raw/',
   fileTypeTranslate: '.json'
 };
