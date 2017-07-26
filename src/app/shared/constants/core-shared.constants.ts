@@ -5,4 +5,4 @@ export const CoreDiSharedConstants: ICoreSharedConstants = {
   dexApiUrl: '../../../assets/mock-data/'
 };
 
-export let CoreSharedConstants = new InjectionToken< ICoreSharedConstants >('app.config');
+export let coreSharedConstants = new InjectionToken< ICoreSharedConstants >('app.config');
