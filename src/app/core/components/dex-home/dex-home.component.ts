@@ -2,19 +2,35 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { DexCoreService } from '../../shared/services/dex-core.service';
 import { SafeHtml } from '@angular/platform-browser';
+import { MdDialog } from '@angular/material';
+import { DialogSimple } from '../../../shared/messages-component/simplemessages.component';
+import { DialogPopUp } from '../../../shared/messages-component/formpopup.component';
 
 @Component({
   selector: 'dex-home',
   templateUrl: './dex-home.html',
-  styleUrls: ['./dex-home.scss']
+   styleUrls: [
+    'dex-home.scss'
+  ]
 })
 export class DexHomeComponent implements OnInit {
   public questionList: any;
   public modelToSend: any[] = [];
 
   constructor(private _dexCoreService: DexCoreService,
-              private _sanitizer: DomSanitizer) {
+              private _sanitizer: DomSanitizer,
+              public dialog: MdDialog) {
 
+  }
+
+  openDialog(dialogType) {
+    if (dialogType == 1) {
+      this.dialog.open(DialogSimple);
+    }
+
+     if (dialogType == 2) {
+      this.dialog.open(DialogPopUp);
+    }
   }
 
   public ngOnInit(): void {

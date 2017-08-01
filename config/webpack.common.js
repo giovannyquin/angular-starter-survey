@@ -178,6 +178,8 @@ module.exports = function (options) {
           exclude: [helpers.root('src', 'styles')]
         },
 
+       
+
         /**
          * Raw loader support for *.html
          * Returns file content as string

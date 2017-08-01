@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { NgxDynamicTemplateModule } from 'ngx-dynamic-template';
 import { DexSharedModule } from '../shared/dex-shared.module';
 
+
 import { DexCoreService } from './shared/services/dex-core.service';
 
 // Components

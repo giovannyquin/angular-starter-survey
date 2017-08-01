@@ -1,0 +1,43 @@
+@import '~@angular/material/_theming';
+
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+
+
+.center{  
+  margin: 10px auto;
+}
+
+.main-div{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.body-style{
+  background-color: whitesmoke;
+}
+
+.content-card-header{   
+   width: 100%;
+}
+
+.header {
+    min-height: 150px;
+    max-height: 150px;
+    background: #fff url(../../../../../src/assets/img/4.png) no-repeat 50% fixed;
+    background-size: cover;
+}
+
+.home-container {
+    height: calc(100% - 86px);
+    position: relative;
+    max-width: 80%;
+    width: 80%;
+    margin: -64px auto 0;
+    padding: 0 32px 64px;
+}

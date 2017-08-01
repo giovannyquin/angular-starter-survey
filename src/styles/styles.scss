@@ -2,7 +2,8 @@
 /* This file is for setting global styles  */
 //@import '~bootstrap';
 @import 'variables';
-@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~@angular/material/_theming';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 nav a {
   background-color: $nav-button-color;

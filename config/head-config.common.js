@@ -33,6 +33,12 @@ module.exports = {
      */
     { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/assets/icon/android-icon-192x192.png' },
 
+    /** <link> tags for a fonts **/
+    { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' },
+    { href: "https://unpkg.com/@angular/material/prebuilt-themes/indigo-pink.css", rel: 'stylesheet' },
+
+
+
     /**
      * <link> tags for favicons
      */

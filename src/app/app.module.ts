@@ -1,8 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AngularMaterialModules } from './shared/angularMaterial-component/angularMaterial-component';
+
+// Material 2
+import { MaterialModule } from '@angular/material';
+import 'hammerjs';
+
 import {
   NgModule,
   ApplicationRef
@@ -32,7 +38,6 @@ import { AppState, InternalStateType } from './app.service';
 import { DexSharedModule } from './shared/index';
 import { DexCoreModule } from './core/index';
 
-import '../styles/styles.scss';
 import '../styles/headings.css';
 
 // Application wide providers
@@ -62,8 +67,10 @@ type StoreType = {
     BrowserModule,
     FormsModule,
     HttpModule,
+    MaterialModule,
+    BrowserAnimationsModule,
+    AngularMaterialModules,
     RouterModule.forRoot(ROUTES, {useHash: true, preloadingStrategy: PreloadAllModules}),
-    NgbModule.forRoot(),
     TranslateModule.forRoot({
       loader : {
         provide: TranslateLoader,

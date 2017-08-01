@@ -1,86 +1,116 @@
-<div class="container" *ngIf="questionList">
-  <div class="col-xs-12">
-    Home Component Survey
-    {{ 'GENERIC.HELLO' | translate }}
-  </div>
-  <div class="col-xs-12">
-    <h1> Questions </h1>
-  </div>
-  <div class="col-12" *ngFor='let questions of questionList.pages[0].questions'>
-    <div class="card" *ngIf="questions.type==='matrix'">
-      <div class="card-header">
-        <span [innerHTML]="questions.title"></span>
-      </div>
-      <div class="card-block">
-        <div class="row">
-          <div class="col-4">
-            -
+<div class="body-style" flex md-scroll-y>
+  <div class="header"></div>
+  <div layout="row" class="home-container" layout-align="center center">
+    <md-toolbar class="z-depth center content-toolbar" flex="50">
+      <span> Survey Name</span>
+      <span class="toolbar-spacer"></span>
+      <button md-icon-button [mdMenuTriggerFor]="menu">
+        <md-icon>more_vert</md-icon>
+      </button>
+      <md-menu #menu="mdMenu">
+        <button md-menu-item>
+          <md-icon>save</md-icon>
+          <span>Save</span>
+        </button>
+        <button md-menu-item>
+          <md-icon>cancel</md-icon>
+          <span>Cancel</span>
+        </button>
+      </md-menu>
+    </md-toolbar>
+    <md-card class="z-depth center content-card" flex="50">
+      <md-card-content>
+        <button md-button (click)="openDialog(2)">Open small dialog</button>
+        <div class="container" *ngIf="questionList">
+          <div class="col-xs-12">
+            Home Component Survey {{ 'GENERIC.HELLO' | translate }}
           </div>
-          <div class="col-8">
-            <div class="row">
-              <div class="col-2" *ngFor="let columns of questions.columns">
-                <span [innerHTML]="columns.text"></span>
+          <div class="col-xs-12">
+            <h1> Questions </h1>
+          </div>
+
+          <div class="col-12" *ngFor='let questions of questionList.pages[0].questions'>
+            <div class="card" *ngIf="questions.type==='matrix'">
+              <div class="card-header">
+                <span [innerHTML]="questions.title"></span>
+              </div>
+              <div class="card-block">
+                <div class="row">
+                  <div class="col-4">
+                    -
+                  </div>
+                  <div class="col-8">
+                    <div class="row">
+                      <div class="col-2" *ngFor="let columns of questions.columns">
+                        <span [innerHTML]="columns.text"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row" *ngFor="let answer of questions.rows">
+                  <div class="col-4" [innerHTML]="answer.text"></div>
+                  <div class="col-8">
+                    <div class="row">
+                      <div class="col-2" *ngFor="let columns of questions.columns">
+                        <input type="radio" [value]="columns.value" name="{{ answer.value }}" (click)="onClick($event)">
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="row" *ngFor="let answer of questions.rows">
-          <div class="col-4" [innerHTML]="answer.text"></div>
-          <div class="col-8">
-            <div class="row">
-              <div class="col-2" *ngFor="let columns of questions.columns">
-                <input type="radio" [value]="columns.value" name="{{ answer.value }}" (click)="onClick($event)">
+            <div class="card" *ngIf="questions.type==='comment'">
+              <div class="card-header">
+                <h5 [innerHTML]="questions.title"></h5>
+              </div>
+              <div class="card-block">
+                <div class="row">
+                  <div class="col-12">
+                    <textarea type="text" cols="50" rows="6" [name]="questions.name"></textarea>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card" *ngIf="questions.type==='comment'">
-      <div class="card-header">
-        <h5 [innerHTML]="questions.title"></h5>
-      </div>
-      <div class="card-block">
-        <div class="row">
-          <div class="col-12">
-            <textarea type="text" cols="50" rows="6" [name]="questions.name"></textarea>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card" *ngIf="questions.type === 'checkbox'">
-      <div class="card-header">
-        <h5 [innerHTML]="questions.title"></h5>
-      </div>
-      <div class="card-block">
-        <div class="row">
-          <!--<div class="form-check col-6"
+            <div class="card" *ngIf="questions.type === 'checkbox'">
+              <div class="card-header">
+                <h5 [innerHTML]="questions.title"></h5>
+              </div>
+              <div class="card-block">
+                <div class="row">
+                  <!--<div class="form-check col-6"
                *ngFor="let choices of questions.choices"
                [innerHTML]="transformSafeHtml(choices)">
           </div>-->
-          <!--<div class="form-check col-6" *ngFor="let choices of questions.choices">
+                  <!--<div class="form-check col-6" *ngFor="let choices of questions.choices">
             <template dynamic-component
                       [componentContext]="{onClick: onClick, choices: choices, modelToSend: modelToSend}"
                       [componentTemplate]='choices.value'></template>
           </div>-->
 
-          <div class="form-check col-6" *ngFor="let choices of questions.choices">
-            <ng-template dynamic-template
-                         [template]="choices.value"
-                         [context]="{onClick: onClick, choices: choices, modelToSend: modelToSend}">
+                  <div class="form-check col-6" *ngFor="let choices of questions.choices">
+                    <ng-template dynamic-template [template]="choices.value" [context]="{onClick: onClick, choices: choices, modelToSend: modelToSend}">
 
-            </ng-template>
+                    </ng-template>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+          </div>
+          <div class="row">
+            <div class="col-12 text-center">
+              <button class="btn btn-primary" (click)="continueSurvey()"> Continue </button>
+            </div>
           </div>
         </div>
 
-      </div>
-    </div>
-
-
-  </div>
-  <div class="row">
-    <div class="col-12 text-center">
-      <button class="btn btn-primary" (click)="continueSurvey()" > Continue </button>
-    </div>
+      </md-card-content>
+      <md-card-actions>
+        <button md-button>NEXT >></button>
+        <button md-button>CANCEL</button>
+      </md-card-actions>
+    </md-card>
   </div>
 </div>

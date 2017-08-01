@@ -3,8 +3,7 @@ import { AppState } from '../../../app.service';
 
 @Component({
   selector: 'dex-body',
-  templateUrl: './dex-body.html',
-  styles: [require('./dex-body.scss')]
+  templateUrl: './dex-body.html'
 })
 export class DexBodyComponent implements OnInit {
   constructor(public appState: AppState) {
