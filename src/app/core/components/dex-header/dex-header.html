@@ -1,11 +1,13 @@
- <md-toolbar>  
+ <md-toolbar>
    <span>Deloitte Dex</span>
    <span class="header-spacer"></span>
    <button md-button>INDEX</button>
-   <button md-button (click)="btnClick('home');">HOME</button>
-   <button md-button (click)="btnClick('detail');">DETAIL</button>
-   <button md-button (click)="btnClick('barrel');">BARREL</button>
-   <button md-button (click)="btnClick('about');">ABOUT</button>
+   <button md-button (click)="btnClick('home')">{{ 'HEADER.HOME' | translate }}</button>
+   <button md-button (click)="btnClick('detail');">{{ 'HEADER.DETAIL' | translate }}</button>
+   <button md-button (click)="btnClick('barrel');">{{ 'HEADER.BARREL' | translate }}</button>
+   <button md-button (click)="btnClick('about');">{{ 'HEADER.ABOUT' | translate }}</button>
+   <button md-button (click)="changeLanguage('en-us')">En-us</button>
+   <button md-button (click)="changeLanguage('es-co');">Es-co</button>
 </md-toolbar>
 
 <!--<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
