@@ -66,12 +66,12 @@ type StoreType = {
    */
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    BusyModule,
     FormsModule,
     HttpModule,
     MaterialModule,
-    BrowserAnimationsModule,
     AngularMaterialModules,
-    BusyModule,
     RouterModule.forRoot(ROUTES, {useHash: true, preloadingStrategy: PreloadAllModules}),
     TranslateModule.forRoot({
       loader : {
