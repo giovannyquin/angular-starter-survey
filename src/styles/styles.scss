@@ -2,7 +2,7 @@
 /* This file is for setting global styles  */
 //@import '~bootstrap';
 @import 'variables';
-@import '/node_modules/angular2-busy/build/style/busy.css';
+@import '~angular2-busy/build/style/busy.css';
 @import '~@angular/material/_theming';
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
@@ -17,8 +17,4 @@ nav a {
   text-align: center;
   text-decoration: none;
   border-radius: 4px;
-}
-
-body {
-  padding-top: 5rem;
 }

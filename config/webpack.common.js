@@ -61,7 +61,7 @@ module.exports = function (options) {
      * See: http://webpack.github.io/docs/configuration.html#entry
      */
     entry: {
-      'vendors': './src/vendors.ts',
+      vendors: './src/vendors.ts',
       'polyfills': './src/polyfills.browser.ts',
       'main':      AOT ? './src/main.browser.aot.ts' :
                   './src/main.browser.ts'

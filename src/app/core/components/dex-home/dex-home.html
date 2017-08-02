@@ -1,7 +1,6 @@
-<div class="body-style"
-     [ngBusy]="{busy: displayScreen,
+<div class="body-style" flex md-scroll-y>
+  <div [ngBusy]="{busy: displayScreen,
                 message: txtLoading}">
-  <div flex md-scroll-y>
     <div class="header"></div>
     <div layout="row" class="home-container" layout-align="center center">
       <md-toolbar class="z-depth center content-toolbar" flex="50">
@@ -55,8 +54,7 @@
                     <div class="col-8">
                       <div class="row">
                         <div class="col-2" *ngFor="let columns of questions.columns">
-                          <input type="radio" [value]="columns.value" name="{{ answer.value }}"
-                                 (click)="onClick($event)">
+                          <input type="radio" [value]="columns.value" name="{{ answer.value }}" (click)="onClick($event)">
                         </div>
                       </div>
                     </div>
@@ -92,8 +90,7 @@
             </div>-->
 
                     <div class="form-check col-6" *ngFor="let choices of questions.choices">
-                      <ng-template dynamic-template [template]="choices.value"
-                                   [context]="{onClick: onClick, choices: choices, modelToSend: modelToSend}">
+                      <ng-template dynamic-template [template]="choices.value" [context]="{onClick: onClick, choices: choices, modelToSend: modelToSend}">
 
                       </ng-template>
                     </div>
@@ -106,7 +103,7 @@
             </div>
             <div class="row">
               <div class="col-12 text-center">
-                <button class="btn btn-primary" (click)="continueSurvey()"> Continue</button>
+                <button class="btn btn-primary" (click)="continueSurvey()"> Continue </button>
               </div>
             </div>
           </div>
@@ -119,4 +116,5 @@
       </md-card>
     </div>
   </div>
+
 </div>

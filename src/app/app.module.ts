@@ -39,6 +39,7 @@ import { AppState, InternalStateType } from './app.service';
 import { DexSharedModule } from './shared/index';
 import { DexCoreModule } from './core/index';
 
+import '../styles/styles.scss';
 import '../styles/headings.css';
 
 // Application wide providers
