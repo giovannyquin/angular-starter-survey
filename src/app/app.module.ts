@@ -4,6 +4,7 @@ import { HttpModule, Http } from '@angular/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AngularMaterialModules } from './shared/angularMaterial-component/angularMaterial-component';
+import { BusyModule } from 'angular2-busy';
 
 // Material 2
 import { MaterialModule } from '@angular/material';
@@ -70,6 +71,7 @@ type StoreType = {
     MaterialModule,
     BrowserAnimationsModule,
     AngularMaterialModules,
+    BusyModule,
     RouterModule.forRoot(ROUTES, {useHash: true, preloadingStrategy: PreloadAllModules}),
     TranslateModule.forRoot({
       loader : {

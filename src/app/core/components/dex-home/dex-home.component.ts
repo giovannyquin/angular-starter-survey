@@ -5,6 +5,8 @@ import { SafeHtml } from '@angular/platform-browser';
 import { MdDialog } from '@angular/material';
 import { DialogSimple } from '../../../shared/messages-component/simplemessages.component';
 import { DialogPopUp } from '../../../shared/messages-component/formpopup.component';
+import {Subscription} from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'dex-home',
@@ -16,9 +18,12 @@ import { DialogPopUp } from '../../../shared/messages-component/formpopup.compon
 export class DexHomeComponent implements OnInit {
   public questionList: any;
   public modelToSend: any[] = [];
+  public displayScreen: Subscription;
+  public txtLoading: string;
 
   constructor(private _dexCoreService: DexCoreService,
               private _sanitizer: DomSanitizer,
+              private _translateService: TranslateService,
               public dialog: MdDialog) {
 
   }
@@ -34,12 +39,16 @@ export class DexHomeComponent implements OnInit {
   }
 
   public ngOnInit(): void {
+    this._translateService.get('GENERIC.LOADING')
+      .subscribe((text: string) => {
+        this.txtLoading = text;
+      });
     this.getQuestionsSurvey();
   }
 
   public getQuestionsSurvey(): void {
     const url = 'survey.json';
-    this._dexCoreService.getQuestionsSurvey(url)
+    this.displayScreen = this._dexCoreService.getQuestionsSurvey(url)
       .subscribe(
         (questionList: any) => {
           this.questionList = questionList;
@@ -60,6 +69,7 @@ export class DexHomeComponent implements OnInit {
 
   public continueSurvey(): void {
     console.log('continue Surve ', this.modelToSend);
+    this.getQuestionsSurvey();
   }
 
   public transformSafeHtml(html: string): SafeHtml {

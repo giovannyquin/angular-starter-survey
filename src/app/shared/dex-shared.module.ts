@@ -6,15 +6,16 @@ import { TranslateModule } from '@ngx-translate/core';
 import { DialogSimple } from './messages-component/simplemessages.component';
 import { DialogPopUp } from './messages-component/formpopup.component';
 import { AngularMaterialModules } from './angularMaterial-component/angularMaterial-component';
+import { BusyModule} from 'angular2-busy';
 
 @NgModule({
   declarations: [ DialogSimple,
   DialogPopUp
   ],
-  entryComponents: [DialogSimple, 
+  entryComponents: [DialogSimple,
   DialogPopUp],
   imports: [CommonModule, AngularMaterialModules],
-  exports: [TranslateModule, DialogSimple, AngularMaterialModules],
+  exports: [TranslateModule, BusyModule, DialogSimple, AngularMaterialModules],
   providers: [
     DexApiService,
     {

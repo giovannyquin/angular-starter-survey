@@ -1,3 +1,4 @@
+///<reference path="../../../../../node_modules/rxjs/add/operator/map.d.ts"/>
 import {Injectable, Inject} from '@angular/core';
 import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
@@ -9,6 +10,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/delay';
 
 @Injectable()
 export class DexApiService {
@@ -18,6 +20,7 @@ export class DexApiService {
 
   public getResource<T>(url: string): Observable<T> {
     return this._http.get(this.config.dexApiUrl + url)
+      .delay(5000)
       .map((response: Response): T => {
         return <T> response.json();
       })

@@ -1,4 +1,6 @@
-<div class="body-style" flex md-scroll-y>
+<div class="body-style" flex md-scroll-y
+     [ngBusy]="{busy: displayScreen,
+                message: txtLoading}">
   <div class="header"></div>
   <div layout="row" class="home-container" layout-align="center center">
     <md-toolbar class="z-depth center content-toolbar" flex="50">
